@@ -25,22 +25,39 @@ spring:
       bindings:
         event-in:
           group: Reservation
-          destination: hotelmanage
+          destination: accommodation
           contentType: application/json
         event-out:
-          destination: hotelmanage
+          destination: accommodation
           contentType: application/json
 
 logging:
   level:
     org.hibernate.type: trace
     org.springframework.cloud: debug
+
+#  --> 여기부터
+# application.yml
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    # 전역설정
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 610
+      # execution.isolation.thread.timeoutInMilliseconds: 2400
+#  --> 여기까지
+
 server:
   port: 8081
 
 api:
   url:
     payment: http://localhost:8082
+
+
 ---
 
 spring:
@@ -61,10 +78,10 @@ spring:
       bindings:
         event-in:
           group: Reservation
-          destination: hotelmanage
+          destination: accommodation
           contentType: application/json
         event-out:
-          destination: hotelmanage
+          destination: accommodation
           contentType: application/json
 api:
   url:
