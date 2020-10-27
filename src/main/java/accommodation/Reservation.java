@@ -45,7 +45,7 @@ public class Reservation {
     @PreUpdate
     public void onPreUpdate(){
 
-        if("reserve".equals(this.getReserveStatus())){
+        if("payment".equals(this.getReserveStatus())){
             Reserved reserved = new Reserved();
             reserved.setReservationNumber(this.getReservationNumber());
             reserved.setReserveStatus(this.getReserveStatus());
