@@ -47,6 +47,7 @@ hystrix:
     # 전역설정
     default:
       execution.isolation.thread.timeoutInMilliseconds: 610
+      # execution.isolation.thread.timeoutInMilliseconds: 2400
 #  --> 여기까지
 
 server:
