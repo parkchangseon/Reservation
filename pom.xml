@@ -8,10 +8,10 @@
 		<version>2.1.9.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>hotelmanage</groupId>
-	<artifactId>ReservationManagement</artifactId>
+	<groupId>accommodation</groupId>
+	<artifactId>Reservation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ReservationManagement</name>
+	<name>Reservation</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

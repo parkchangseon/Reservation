@@ -14,7 +14,7 @@ variables:
     # containerRegistryDockerConnection: 'acr'
     # environment: 'aks.default'
   - name: imageRepository
-    value: 'reservationmanagement'
+    value: 'reservation'
   - name: dockerfilePath
     value: '**/Dockerfile'
   - name: tag
@@ -106,7 +106,7 @@ stages:
                                   - containerPort: 8080
                                 readinessProbe:
                                   httpGet:
-                                    path: /reservationmanagements
+                                    path: /reservation
                                     port: 8080
                                   initialDelaySeconds: 10
                                   timeoutSeconds: 2
@@ -114,7 +114,7 @@ stages:
                                   failureThreshold: 10
                                 livenessProbe:
                                   httpGet:
-                                    path: /reservationmanagements
+                                    path: /reservation
                                     port: 8080
                                   initialDelaySeconds: 120
                                   timeoutSeconds: 2
