@@ -35,12 +35,28 @@ logging:
   level:
     org.hibernate.type: trace
     org.springframework.cloud: debug
+
+#  --> 여기부터
+# application.yml
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    # 전역설정
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 610
+#  --> 여기까지
+
 server:
   port: 8081
 
 api:
   url:
     payment: http://localhost:8082
+
+
 ---
 
 spring:
